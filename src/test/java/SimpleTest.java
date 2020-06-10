@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SimpleTest {
@@ -92,5 +93,6 @@ public class SimpleTest {
     }
     @Step(value = "Login was unsuccessful")
     public void isLoginUnsuccessful(){
-        assertTrue(driver.findElements(By.linkText("Pobierz plik")).isEmpty());   }
+        assertFalse(driver.findElements(By.linkText("Pobierz plik")).isEmpty());
+    }
 }
